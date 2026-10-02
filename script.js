@@ -88,7 +88,7 @@ function makeDefaults() {
       mk(`sy7`, `سایر محصولات و نمادها`, soon, `images/symbol-other.jpg`)
     ],
     villages: [
-      mk(`vi1`, `نام روستا را وارد کنید`, `روستاهای بخش را از پنل مدیریت اضافه کنید.`, `images/village-sample.jpg`)
+      mk(`vi1`, `روستای ابیونه`, `روستاهای بخش را از پنل مدیریت اضافه کنید.`, `images/village-sample.jpg`)
     ],
     accommodations: [
       mk(`ac1`, `افصح‌الدوله`, soon, `images/stay-afsahodoleh.jpg`),
@@ -100,7 +100,7 @@ function makeDefaults() {
       mk(`ac7`, `بوم‌گردی‌های روستاها`, soon, `images/stay-ecolodge.jpg`)
     ],
     medicalCenters: [
-      mk(`me1`, `نام مرکز درمانی`, `نام، آدرس و تلفن واقعی را از پنل مدیریت وارد کنید.`, `images/medical-sample.jpg`)
+      mk(`me1`,`بیمارستان فاطمیه بادرود`, `نام، آدرس و تلفن واقعی را از پنل مدیریت وارد کنید.`, `images/medical-sample.jpg`)
     ],
     ads: [
       { id: `restaurants`, title: `رستوران`, items: [ad(`ad1`)] },
@@ -115,6 +115,7 @@ function makeDefaults() {
       { id: `g1`, name: `انارهای رسیده`, image: `images/gallery-1.jpg`, category: `طبیعت`, relatedPlace: `` },
       { id: `g2`, name: `غروب کویر`, image: `images/gallery-2.jpg`, category: `طبیعت`, relatedPlace: `pl1` },
       { id: `g3`, name: `جشنواره انار`, image: `images/gallery-festival-1.jpg`, category: `جشنواره انار`, relatedPlace: `` }
+      { id: 'g4', name:'کاراکال',image:'image/gallery-karakal.jpg'}
     ],
     contact: {
       phones: [],
@@ -399,8 +400,8 @@ function renderContact() {
     phoneLi.appendChild(document.createTextNode(EMPTY_MSG));
   }
   row(`آدرس`).appendChild(document.createTextNode(c.address || EMPTY_MSG));
-  const mailLi = row(`ایمیل`);
-  if (c.email) { const a = el(`a`, ``, c.email); a.href = `mailto:` + c.email; mailLi.appendChild(a); }
+  const mailLi = row(`رزرو تبلیغات`);
+  if (CSS) { const a = el(`a`, ``, CSS); a.href = `mailto:` + CSS; mailLi.appendChild(a); }
   else mailLi.appendChild(document.createTextNode(EMPTY_MSG));
   const socLi = row(`شبکه‌های اجتماعی`);
   let n = 0;
@@ -586,7 +587,7 @@ function contactForm() {
   const soc = c.socials.map(function (s) { return s.name + ` | ` + s.url; }).join(`\n`);
   return `<h3>اطلاعات تماس</h3>` +
     fld(`admT_phones`, `شماره‌ها (هر خط یک شماره)`, c.phones.join(`\n`), true) +
-    fld(`admT_email`, `ایمیل`, c.email) + fld(`admT_address`, `آدرس`, c.address) +
+    fld(`admT_email`, `برای رزرو تبلیغات`, soc, true) + fld(`admT_address`, `آدرس`, c.address) +
     fld(`admT_socials`, `شبکه‌ها (هر خط: نام | لینک)`, soc, true) +
     fld(`admT_emblem`, `لینک نشان بادرود`, c.emblem) +
     fld(`admT_lat`, `عرض جغرافیایی`, c.lat) + fld(`admT_lng`, `طول جغرافیایی`, c.lng) +
