@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بادرود | کویر، تاریخ و انار</title>
+<meta name="description" content="گردشگری، اقامت، روستاها و خدمات شهر بادرود.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <a class="logo" href="#home">بادرود</a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="منو" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="navMenu">
+    <a href="#home">خانه</a>
+    <a href="#about">درباره بادرود</a>
+    <a href="#places">جاهای دیدنی</a>
+    <a href="#tourism">گردشگری</a>
+    <a href="#gallery">گالری</a>
+    <a href="#contact">تماس با ما</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>بادرود؛ جایی که کویر، تاریخ و زندگی به هم می‌رسند</h1>
+      <p>از باغ‌های انار تا شب‌های پرستاره کویر؛ سفری آرام به شهری که هر فصلش رنگ و طعم خودش را دارد.</p>
+      <a class="btn" href="#about">کشف بادرود</a>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2>درباره بادرود</h2>
+      <div class="about-grid">
+        <div id="aboutText" class="about-text"></div>
+        <div class="why" id="whyGrid"></div>
+      </div>
+      <div class="facts" id="aboutFacts"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="places">
+    <div class="wrap">
+      <h2>جاهای دیدنی بادرود</h2>
+      <div class="cards" id="placesGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="tourism">
+    <div class="wrap">
+      <h2>گردشگری بادرود</h2>
+      <div class="tabs" id="tourismTabs" role="tablist"></div>
+      <div class="chips" id="tourismSub"></div>
+      <h3 class="sub-title" id="tourismTitle"></h3>
+      <div class="cards" id="tourismGrid"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="gallery">
+    <div class="wrap">
+      <h2>گالری</h2>
+      <div class="chips" id="galleryFilters"></div>
+      <p class="note-line" id="galleryNote"></p>
+      <div class="gallery" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>تماس با ما</h2>
+        <ul class="contact-list" id="contactList"></ul>
+        <button class="btn small" id="emblemBtn" type="button">نشان بادرود</button>
+      </div>
+      <div class="map-box"><iframe id="mapFrame" title="موقعیت بادرود روی نقشه" loading="lazy"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>© بادرود؛ نسخه آزمایشی</span>
+  <button class="link-btn" id="adminOpen" type="button">ورود مدیر</button>
+</footer>
+
+<div class="overlay" id="modalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" type="button" aria-label="بستن">×</button>
+    <div class="modal-img" id="modalImg"></div>
+    <h3 id="modalTitle"></h3>
+    <div id="modalBody" class="modal-body"></div>
+    <div class="row-actions" id="modalActions"></div>
+  </div>
+</div>
+
+<div class="overlay" id="adminOverlay" hidden>
+  <div class="modal admin" role="dialog" aria-modal="true" aria-label="پنل مدیریت">
+    <button class="modal-close" id="adminClose" type="button" aria-label="بستن">×</button>
+    <div id="adminBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
